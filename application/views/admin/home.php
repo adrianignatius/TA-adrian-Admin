@@ -10,7 +10,7 @@
                                         <h3 class="box-title">Jumlah Pengguna</h3>
                                         <ul class="list-inline two-part">
                                             <li><i class="icon-people text-info"></i></li>
-                                            <li class="text-right"><span class="counter">23</span></li>
+                                            <li class="text-right"><span class="counter"><?php echo $jumlah_user?></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -19,7 +19,7 @@
                                         <h3 class="box-title">Total laporan Lost & Found Masuk</h3>
                                         <ul class="list-inline two-part">
                                             <li><i class="ti-location-pin text-purple"></i></li>
-                                            <li class="text-right"><span class="counter">169</span></li>
+                                            <li class="text-right"><span class="counter"><?php echo $jumlah_laporan_lostfound?></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                                         <h3 class="box-title">Total laporan Kriminalitas Masuk</h3>
                                         <ul class="list-inline two-part">
                                             <li><i class="ti-location-pin text-danger"></i></li>
-                                            <li class="text-right"><span class="counter">311</span></li>
+                                            <li class="text-right"><span class="counter"><?php echo $jumlah_laporan_kriminalitas?></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -81,9 +81,14 @@
 
                     <div class="col-md-12 col-lg-4">
                         <div class="white-box">
-                            <h3 class="box-title">Laporan Lost Found Masuk</h3>
+                            <h3 class="box-title">Headline Laporan Lost Found</h3>
                             <div class="message-center">
-                                <a href="#">
+                                <?php foreach ((array)$headline_laporan_lostfound as $laporan  ): ?> 
+                                    <?php
+                                        echo $laporan;
+                                        ?>
+                                <?php endforeach ?> 
+                                <!-- <a href="#">
                                 <div class="user-img"> <img src="<?php echo base_url(); ?>optimum/plugins/images/avatar-profile.png" alt="user" class="img-circle"></div>
                                     <div class="mail-contnet">
                                         <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> 
@@ -103,7 +108,7 @@
                                     <div class="user-img"> <img src="<?php echo base_url(); ?>optimum/plugins/images/users/pawandeep.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                     <div class="mail-contnet">
                                         <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -140,8 +145,12 @@
                 </div>	
             </div>
     <!-- Row -->
-    <script type="text/javascript">
-
+<script type="text/javascript">
+    var kategori_laporan_lostfound=<?php echo json_encode($data_kategori_laporan_lostfound);?>;
+    var dataChartLaporan=[];
+    kategori_laporan_lostfound.forEach(function(obj){
+        dataChartLaporan.push({y:obj.jumlah_laporan,label:obj.kategori_laporan});
+    });
     window.onload = function () {
         var chart = new CanvasJS.Chart("chartContainer", {
             title:{
@@ -149,15 +158,8 @@
             },
             data: [              
             {
-                // Change type to "doughnut", "line", "splineArea", etc.
-                type: "doughnut",
-                dataPoints: [
-                    { label: "apple",  y: 1  },
-                    { label: "orange", y: 15  },
-                    { label: "banana", y: 25  },
-                    { label: "mango",  y: 30  },
-                    { label: "grape",  y: 28  }
-                ]
+                type: "pie",
+                dataPoints: dataChartLaporan
             }
             ]
         });

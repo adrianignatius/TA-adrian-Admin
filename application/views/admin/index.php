@@ -74,9 +74,9 @@
 
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Report Admin <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="<?php echo base_url('admin/report_admin_kriminalitas') ?>">Laporan Kriminalitas</a></li>
-                            <li> <a href="<?php echo base_url('admin/report_admin_lostfound') ?>">Laporan Lost & Found</a></li>
-                            <li> <a href="<?php echo base_url('admin/report_admin_subscription') ?>">Laporan Subscription</a></li>
+                            <li> <a href="<?php echo base_url('admin/report_admin_kriminalitas') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Kriminalitas</span></a></li>
+                            <li> <a href="<?php echo base_url('admin/report_admin_lostfound') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Lost & Found</span></a></li>
+                            <li> <a href="<?php echo base_url('admin/report_admin_subscription') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Subscription</span></a></li>
                         </ul>
                     </li>	 
 					
@@ -91,38 +91,7 @@
                         </ul>
                     </li>
                     
-                    <li> <a href="#" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Sample Pages<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">29</span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="<?php echo base_url('admin/page/starter') ?>">Starter Page</a></li>
-                            <li><a href="<?php echo base_url('admin/page/blank') ?>">Blank Page</a></li>
-                            <li><a href="javascript:void(0)" class="waves-effect">Email Templates
-            <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="<?php echo base_url('admin/page/email_basic') ?>">Basic</a></li>
-                                    <li><a href="<?php echo base_url('admin/page/email_alert') ?>">Alert</a></li>
-                                    <li><a href="<?php echo base_url('admin/page/email_billing') ?>">Billing</a></li>
-                                    <li><a href="<?php echo base_url('admin/page/reset_password') ?>">Reset Password</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="<?php echo base_url('admin/page/lightBox') ?>">Lightbox Popup</a></li>
-                            <li><a href="<?php echo base_url('admin/page/treeview') ?>">Treeview</a></li>
-                            <li><a href="<?php echo base_url('admin/page/search_result') ?>">Search Result</a></li>
-                            <li><a href="<?php echo base_url('admin/page/utility_class') ?>">Utility Classes</a></li>
-                            <li><a href="<?php echo base_url('admin/page/custom_scroll') ?>">Custom Scrolls</a></li>
-                            <li><a href="<?php echo base_url('admin/page/login_page') ?>">Login Page</a></li>
-                            <li><a href="<?php echo base_url('admin/page/second_login') ?>">Login v2</a></li>
-                            <li><a href="<?php echo base_url('admin/page/animation') ?>">Animations</a></li>
-                            <li><a href="<?php echo base_url('admin/page/profile') ?>">Profile</a></li>
-                            <li><a href="<?php echo base_url('admin/page/invoice') ?>">Invoice</a></li>
-                            <li><a href="<?php echo base_url('admin/page/faq') ?>">FAQ</a></li>
-                            <li><a href="<?php echo base_url('admin/page/gallery') ?>">Gallery</a></li>
-                            <li><a href="<?php echo base_url('admin/page/pricing') ?>">Pricing</a></li>
-                            <li><a href="<?php echo base_url('admin/page/register') ?>">Register</a></li>
-                            <li><a href="<?php echo base_url('admin/page/second_register') ?>">Register v2</a></li>
-                            <li><a href="<?php echo base_url('admin/page/step_registration') ?>">3 Step Registration</a></li>
-                            <li><a href="<?php echo base_url('admin/page/recover_password') ?>">Recover Password</a></li>
-                        </ul>
-                    </li>
+                   
                     
                     <li><a href="<?php echo base_url('auth') ?>" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
                 </ul>

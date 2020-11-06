@@ -6,7 +6,8 @@ class Kepala_keamanan extends CI_Controller {
     }
 
     public function getKecamatan(){
-        $json=execute_curl_get("settings/getKecamatan");
+        $token = $this->session->userdata('token');
+        $json=execute_curl_get("settings/getKecamatan",$token);
         return $json;
     }
 
@@ -20,6 +21,7 @@ class Kepala_keamanan extends CI_Controller {
     }
 
     public function add(){
+        $token = $this->session->userdata('token');
         $url= $this->config->item('url');
         $nama_user=$this->input->post('nama_user');
         $telpon_user=$this->input->post('telpon_user');
@@ -36,47 +38,29 @@ class Kepala_keamanan extends CI_Controller {
                 'password_user'=>$password_user,
                 'id_kecamatan_user'=>$kecamatan_user
             ];
-            curl_setopt($ch, CURLOPT_URL,$url."admin/addKepalaKeamanan"); 
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-            $curl_response = curl_exec($ch);  
-            $json = json_decode(utf8_encode($curl_response), true);
-            curl_close($ch);
+            $json=execute_curl_post("admin/addKepalaKeamanan",$postData,$token);
+            // curl_setopt($ch, CURLOPT_URL,$url."admin/addKepalaKeamanan"); 
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+            // $curl_response = curl_exec($ch);  
+            // $json = json_decode(utf8_encode($curl_response), true);
+            // curl_close($ch);
             if($json["status"]=="1"){
-                $this->session->set_flashdata('msg', 'Tambah kepala keamanan berhasil!');
+                $this->session->set_flashdata('msg', $json["message"]);
                 redirect(base_url('admin/kepala_keamanan'));
             }else{
-                $this->session->set_flashdata('error_msg', 'Tambah kepala keamanan gagal, coba beberapa saat lagi');
+                $this->session->set_flashdata('error_msg', $json["message"]);
                 redirect(base_url('admin/kepala_keamanan'));
             }
         }
     }
 
     public function daftar_kepala_keamanan(){
-        $url= $this->config->item('url');
-        $ch = curl_init(); 
-        curl_setopt($ch, CURLOPT_URL,$url."admin/getKepalaKeamanan"); 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $curl_response = curl_exec($ch);  
-        $json = json_decode(utf8_encode($curl_response), true);
-        curl_close($ch);
+        $token = $this->session->userdata('token');
+        $json=execute_curl_get("admin/getKepalaKeamanan",$token);
         $data['page_title'] = 'Daftar kepala keamanan';
         $data['kepala_keamanan'] = $json;
         $data['main_content'] = $this->load->view('admin/kepala_keamanan/daftar_kepala_keamanan', $data, TRUE);
-        $this->load->view('admin/index', $data);
-    }
-
-    public function daftar_user(){
-        $url= $this->config->item('url');
-        $ch = curl_init(); 
-        curl_setopt($ch, CURLOPT_URL,$url."admin/getAllUser"); 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $curl_response = curl_exec($ch);  
-        $json = json_decode(utf8_encode($curl_response), true);
-        curl_close($ch);
-        $data['page_title'] = 'Daftar user';
-        $data['user'] = $json;
-        $data['main_content'] = $this->load->view('admin/user/daftar_user', $data, TRUE);
         $this->load->view('admin/index', $data);
     }
 
@@ -93,6 +77,9 @@ class Kepala_keamanan extends CI_Controller {
             $ch = curl_init($url."admin/updateKepalaKeamanan/".$id);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Authorization: '.$token
+            ));
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
             $curl_response = curl_exec($ch);  
             $json = json_decode(utf8_encode($curl_response), true);

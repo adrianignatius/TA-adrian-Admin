@@ -14,7 +14,7 @@
             <div class="col-lg-12 col-sm-12 col-xs-12">
                 <div class="col-md-12 col-lg-6 col-xs-12">
                         <div class="white-box">
-                            <div id="chartItem" style="height: 300px; width: 100%;"></div>
+                            <div id="chartKejadian" style="height: 300px; width: 100%;"></div>
                         </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xs-12">
@@ -36,25 +36,39 @@
     </div>
     <!-- End Page Content -->
 <script>
-    var data_item=<?php echo json_encode($data_item);?>;
-    var dataBarang=[];
-    data_item.forEach(function(obj){
-        dataBarang.push({y:obj.jumlah_laporan,label:obj.nama_kategori});
+    var data_kejadian=<?php echo json_encode($data_kejadian);?>;
+    var dataKejadianForChart=[];
+    data_kejadian.forEach(function(obj){
+        dataKejadianForChart.push({y:obj.jumlah_laporan,label:obj.nama_kategori});
     });
-    var chart = new CanvasJS.Chart("chartItem", {
+    var data_chart=<?php echo json_encode($data_chart);?>;
+    var dataChartKecamatan=[];
+    data_chart.forEach(function(obj){
+        dataChartKecamatan.push({y:obj.jumlah_laporan,label:obj.nama_kecamatan});
+    });
+
+    var chart = new CanvasJS.Chart("chartKejadian", {
             title:{
-                text: "Jumlah Laporan Kriminalitas per Kejadian"              
+                text: "Jumlah Laporan Kriminalitas Per Kejadian"              
             },
             data: [{
                 type: "doughnut",
-                dataPoints: dataBarang
+                dataPoints: dataKejadianForChart
             }]
-        });
+    });
+    var chart_kecamatan = new CanvasJS.Chart("chartKecamatan", {
+        title:{
+            text: "5 Kecamatan dengan jumlah laporan terbanyak"              
+        },
+        data: [{
+            type: "pie",
+            dataPoints: dataChartKecamatan
+        }]
+    });    
     chart.render();
-
+    chart_kecamatan.render();
     var marker=<?php echo json_encode($marker);?>;
     var kecamatan=<?php echo json_encode($data_kecamatan);?>;
-    var jumlah_laporan=<?php echo $count;?>;
     var max=<?php echo $max_laporan;?>;
     var data={};
     kecamatan.forEach(function(obj) { 

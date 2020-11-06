@@ -37,9 +37,14 @@
     <!-- End Page Content -->
 <script>
     var data_item=<?php echo json_encode($data_item);?>;
+    var data_chart=<?php echo json_encode($data_chart);?>;
     var dataBarang=[];
+    var dataChartKecamatan=[];
     data_item.forEach(function(obj){
         dataBarang.push({y:obj.jumlah_laporan,label:obj.nama_kategori});
+    });
+    data_chart.forEach(function(obj){
+        dataChartKecamatan.push({y:obj.jumlah_laporan,label:obj.nama_kecamatan});
     });
     var chart = new CanvasJS.Chart("chartItem", {
             title:{
@@ -50,11 +55,21 @@
                 dataPoints: dataBarang
             }]
         });
+
+    var chart_kecamatan = new CanvasJS.Chart("chartKecamatan", {
+            title:{
+                text: "5 Kecamatan dengan jumlah laporan terbanyak"              
+            },
+            data: [{
+                type: "pie",
+                dataPoints: dataChartKecamatan
+            }]
+        });
+    chart_kecamatan.render();
     chart.render();
 
     var marker=<?php echo json_encode($marker);?>;
     var kecamatan=<?php echo json_encode($data_kecamatan);?>;
-    var jumlah_laporan=<?php echo $count;?>;
     var max=<?php echo $max_laporan;?>;
     var data={};
     kecamatan.forEach(function(obj) { 

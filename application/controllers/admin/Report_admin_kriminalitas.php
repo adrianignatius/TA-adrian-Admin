@@ -6,15 +6,16 @@ class Report_admin_kriminalitas extends CI_Controller {
     }
 
     public function index(){
+        $token = $this->session->userdata('token');
         $data = array();
-        $data['page_title'] = 'Laporan';
-        $marker=execute_curl_get("admin/getMarkerLocationLaporanLostFound");
-        $count=execute_curl_get("admin/getJumlahLaporanLostFound");
-        $data_kecamatan=execute_curl_get("admin/getJumlahLaporanLostFoundKecamatan");
-        $data_item=execute_curl_get("admin/getJumlahLaporanLostFoundPerItem");
+        $data['page_title'] = 'Report laporan kriminalitas';
+        $marker=execute_curl_get("admin/getMarkerLocationLaporanKriminalitas",$token);
+        $data_kecamatan=execute_curl_get("admin/getJumlahLaporanKriminalitasKecamatan",$token);
+        $data_kejadian=execute_curl_get("admin/getJumlahLaporanKriminalitasPerKejadian",$token);
+        $data_chart=execute_curl_get("admin/getDataLaporanKriminalitasForChartKecamatan",$token);
         $data['marker']=$marker;
-        $data['count']=$count["count"];
-        $data['data_item']=$data_item;
+        $data['data_kejadian']=$data_kejadian;
+        $data['data_chart']=$data_chart;
         $data['data_kecamatan']=$data_kecamatan["data"];
         $data['max_laporan']=$data_kecamatan["max"];
         $data['main_content']=$this->load->view('admin/report_admin/report_kriminalitas',$data,TRUE);
