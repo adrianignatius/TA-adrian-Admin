@@ -1,0 +1,78 @@
+
+    <!-- Start Page Content -->
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            
+           <div class="panel panel-info">
+                <div class="panel-heading"> <i class="fa fa-list"></i> Laporan Lost Found belum terverifikasi
+				</div>
+				
+                <div class="panel-body table-responsive">
+				
+				 <?php $msg = $this->session->flashdata('msg'); ?>
+            <?php if (isset($msg)): ?>
+                <div class="alert alert-success delete_msg pull" style="width: 100%"> <i class="fa fa-check-circle"></i> <?php echo $msg; ?> &nbsp;
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>
+            <?php endif ?>
+
+            <?php $error_msg = $this->session->flashdata('error_msg'); ?>
+            <?php if (isset($error_msg)): ?>
+                <div class="alert alert-danger delete_msg pull" style="width: 100%"> <i class="fa fa-times"></i> <?php echo $error_msg; ?> &nbsp;
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>
+            <?php endif ?>
+							<table id="example23" class="display nowrap" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Judul Laporan</th>
+                                    <th>Jenis Laporan</th>
+                                    <th>Jenis Barang</th>
+                                    <th>Tanggal Laporan</th>
+                                    <th>Waktu Laporan</th>
+                                    <th>Alamat Laporan</th>
+                                    <th>Kecamatan</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ((array)$laporan_lost_found as $laporan  ): ?>                   
+                                <tr>
+                                    <td><?php echo $laporan['judul_laporan'] ?></td>
+                                    <td>
+                                        <?php if ($laporan['jenis_laporan'] == 0): ?>
+                                            <div class="label label-table label-info">Penemuan</div>
+                                        <?php else: ?>
+                                            <div class="label label-table label-primary">Kehilangan</div>
+                                        <?php endif ?>
+                                    </td>
+                                    <td><?php echo $laporan['jenis_barang']; ?></td>
+                                    <td><?php echo $laporan['tanggal_laporan']; ?></td>
+                                    <td><?php echo $laporan['waktu_laporan']; ?></td>
+                                    <td><?php echo $laporan['alamat_laporan']; ?></td>
+                                    <td><?php echo $laporan['kecamatan']; ?></td>
+                                    <td class="text-nowrap">
+                                    <a href="<?php echo base_url('admin/laporan_lost_found/detail/'.$laporan['id_laporan']) ?>"><button type="button" class="btn btn-info btn-circle btn-s" data-toggle="tooltip" data-original-title="Show Detail"><i class="icon-magnifier"></i></button></a>
+                                    <button type="button" class="btn btn-success btn-circle btn-s sa-warning"><i class="ti-check"></i></button></a>
+                                    <a href="<?php echo base_url('admin/laporan_lost_found/detail/'.$laporan['id_laporan']) ?>"><button type="button" class="btn btn-danger btn-circle btn-s" data-toggle="tooltip" data-original-title="Decline"><i class="ti-close"></i></button></a>
+                                    </td>
+                                </tr>
+
+                            <?php endforeach ?>
+
+                            </tbody>
+
+
+                        </table>
+                    </div>
+					
+					
+            </div>
+        </div>
+    </div>
+
+ </div>
+
+    <!-- End Page Content -->
