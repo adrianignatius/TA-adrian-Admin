@@ -41,36 +41,6 @@
 
                     <li> <a href="<?php echo base_url('admin/komentar') ?>" class="waves-effect"><i class="fa fa-comment-o p-r-10"></i> <span class="hide-menu">Manage Komentar</span></a> </li>
                 
-					
-					<li> <a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">UI Elements<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">25</span> </span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="<?php echo base_url('admin/ui/card') ?>">Cards</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/panel_well') ?>">Panels and Wells</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/panel_block') ?>">Panels With BlockUI</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/drag_panel') ?>">Draggable Panel</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/dragPortlet') ?>">Draggable Portlet</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/buttons') ?>">Buttons</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/bootsrap_switch') ?>">Bootstrap Switch</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/date_pagination') ?>">Date Paginator</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/sweet_alert') ?>">Sweat alert</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/typography') ?>">Typography</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/grid') ?>">Grid</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/tabs') ?>">Tabs</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/stylish') ?>">Stylish Tabs</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/modals') ?>">Modals</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/progressbar') ?>">Progress Bars</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/notification') ?>">Notifications</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/carousel') ?>">Carousel</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/list_media') ?>">List & Media object</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/user_card') ?>">User Cards</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/timeline') ?>">Timeline</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/horizontal_timeline') ?>">Horizontal Timeline</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/nestable') ?>">Nesteble</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/range_slider') ?>">Range Slider</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/ribbon') ?>">Ribbons</a></li>
-                            <li><a href="<?php echo base_url('admin/ui/steps') ?>">Steps</a></li>
-                        </ul>
-                    </li>
 
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Report Admin <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
@@ -78,21 +48,7 @@
                             <li> <a href="<?php echo base_url('admin/report_admin_lostfound') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Lost & Found</span></a></li>
                             <li> <a href="<?php echo base_url('admin/report_admin_subscription') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Subscription</span></a></li>
                         </ul>
-                    </li>	 
-					
-                    <li> <a href="<?php echo base_url('admin/widget/widget') ?>" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Widgets</span></a> </li>
-                    <li> <a href="#" class="waves-effect"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Icons<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li> <a href="<?php echo base_url('admin/icon/font_awesome') ?>">Font awesome</a> </li>
-                            <li> <a href="<?php echo base_url('admin/icon/themifyIcon') ?>">Themify Icons</a> </li>
-                            <li> <a href="<?php echo base_url('admin/icon/simpleLineIcon') ?>">Simple line Icons</a> </li>
-                            <li><a href="<?php echo base_url('admin/icon/lineIcon') ?>">Linea Icons</a></li>
-                            <li><a href="<?php echo base_url('admin/icon/weatherIcon') ?>">Weather Icons</a></li>
-                        </ul>
-                    </li>
-                    
-                   
-                    
+                    </li>	              
                     <li><a href="<?php echo base_url('auth') ?>" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
                 </ul>
             </div>

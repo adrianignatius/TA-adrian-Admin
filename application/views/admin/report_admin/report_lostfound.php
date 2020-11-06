@@ -98,7 +98,7 @@ function prepareDataforMarker(data) {
   let ctrCard = 0;
   targetData.forEach(element => {
    let domIcon = ` <div indexMarker='${ctrCard}'>`;
-   domIcon += `"asd"
+   domIcon += `<div class="achievement-container">
       </div>`;
   });
   return targetData;
