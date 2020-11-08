@@ -44,9 +44,9 @@
 
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Report Admin <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="<?php echo base_url('admin/report_admin_kriminalitas') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Kriminalitas</span></a></li>
-                            <li> <a href="<?php echo base_url('admin/report_admin_lostfound') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Lost & Found</span></a></li>
-                            <li> <a href="<?php echo base_url('admin/report_admin_subscription') ?>"><i class="ti-pie-chart p-r-10"></i><span class="hide-menu">Laporan Subscription</span></a></li>
+                            <li> <a href="<?php echo base_url('admin/report_admin_kriminalitas') ?>"><i class="ti-list p-r-10"></i><span class="hide-menu">Laporan Kriminalitas</span></a></li>
+                            <li> <a href="<?php echo base_url('admin/report_admin_lostfound') ?>"><i class="ti-list p-r-10"></i><span class="hide-menu">Laporan Lost & Found</span></a></li>
+                            <li> <a href="<?php echo base_url('admin/report_admin_subscription') ?>"><i class="ti-money p-r-10"></i><span class="hide-menu">Laporan Subscription</span></a></li>
                         </ul>
                     </li>	              
                     <li><a href="<?php echo base_url('auth') ?>" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>

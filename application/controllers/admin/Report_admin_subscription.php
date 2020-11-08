@@ -9,16 +9,9 @@ class Report_admin_subscription extends CI_Controller {
         $token = $this->session->userdata('token');
         $data = array();
         $data['page_title'] = 'Report Subscription Pengguna';
-        $marker=execute_curl_get("admin/getMarkerLocationLaporanLostFound",$token);
-        $data_kecamatan=execute_curl_get("admin/getJumlahLaporanLostFoundKecamatan",$token);
-        $data_item=execute_curl_get("admin/getJumlahLaporanLostFoundPerItem",$token);
-        $data_chart=execute_curl_get("admin/getDataLaporanLostFoundForChartKecamatan",$token);
-        $data['marker']=$marker;
-        $data['data_item']=$data_item;
-        $data['data_chart']=$data_chart;
-        $data['data_kecamatan']=$data_kecamatan["data"];
-        $data['max_laporan']=$data_kecamatan["max"];
-        $data['main_content']=$this->load->view('admin/report_admin/report_lostfound',$data,TRUE);
+        $data_transaksi=execute_curl_get("admin/getReportTransaksi",$token);
+        $data['data_transaksi']=$data_transaksi;
+        $data['main_content']=$this->load->view('admin/report_admin/report_subscription',$data,TRUE);
         $this->load->view('admin/index', $data);
     }
 }
