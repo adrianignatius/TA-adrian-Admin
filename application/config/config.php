@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $config['url']="http://adrian-webservice.ta-istts.com/";
+$config['username']="adrianignatius27";
+$config['password']="AdRiAn";
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

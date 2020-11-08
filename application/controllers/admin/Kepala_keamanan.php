@@ -31,7 +31,6 @@ class Kepala_keamanan extends CI_Controller {
             $this->session->set_flashdata('error_msg', 'Harap lengkapi semua data terlebih dahulu');
             redirect(base_url('admin/kepala_keamanan'));
         }else{
-            $ch = curl_init();  
             $postData=[
                 'nama_user'=>$nama_user,
                 'telpon_user'=>$telpon_user,
@@ -39,12 +38,6 @@ class Kepala_keamanan extends CI_Controller {
                 'id_kecamatan_user'=>$kecamatan_user
             ];
             $json=execute_curl_post("admin/addKepalaKeamanan",$postData,$token);
-            // curl_setopt($ch, CURLOPT_URL,$url."admin/addKepalaKeamanan"); 
-            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-            // curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-            // $curl_response = curl_exec($ch);  
-            // $json = json_decode(utf8_encode($curl_response), true);
-            // curl_close($ch);
             if($json["status"]=="1"){
                 $this->session->set_flashdata('msg', $json["message"]);
                 redirect(base_url('admin/kepala_keamanan'));
