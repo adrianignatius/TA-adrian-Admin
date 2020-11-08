@@ -12,7 +12,7 @@ class Cronjob extends CI_Controller {
         $json=execute_curl_post("loginAdmin",$postData,"");
         $token=$json["token"];
         $json=execute_curl_get("user/getPremiumUserInformation",$token);
-        $date= new DateTime('2020-11-16');
+        $date= new DateTime();
         $dateString=$date->format('Y-m-d');
         $postData=[
             'tanggal_charge'=>$dateString
