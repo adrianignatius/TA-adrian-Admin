@@ -40,13 +40,10 @@
                                 <tr>
                                     <td><?php echo $laporan['judul_laporan'] ?></td>
                                     <td><?php echo $laporan['jenis_kejadian']; ?></td>
-                                    <td><?php echo $laporan['tanggal_laporan']. "Pukul ". $laporan["waktu_laporan"]; ?></td>
-                                    
+                                    <td><?php echo $laporan['tanggal_laporan']. "Pukul ". $laporan["waktu_laporan"]; ?></td> 
                                     <td><?php echo $laporan['kecamatan']; ?></td>
                                     <td class="text-nowrap">
-                                    <a href="<?php echo base_url('admin/laporan_kriminalitas/detail/'.$laporan['id_laporan']) ?>"><button type="button" class="btn btn-info btn-circle btn-s" data-toggle="tooltip" data-original-title="Show Detail"><i class="icon-magnifier"></i></button></a>
-                                    <button type="button" class="btn btn-success btn-circle btn-s sa-warning"><i class="ti-check"></i></button></a>
-                                    <a href="<?php echo base_url('admin/laporan_kriminalitas/detail/'.$laporan['id_laporan']) ?>"><button type="button" class="btn btn-danger btn-circle btn-s" data-toggle="tooltip" data-original-title="Decline"><i class="ti-close"></i></button></a>
+                                        <a href="<?php echo base_url('admin/laporan_kriminalitas/detail/'.$laporan['id_laporan']) ?>"><button type="button" class="btn-sm btn-success">Lihat Detail</button></a>
                                     </td>
                                 </tr>
 
