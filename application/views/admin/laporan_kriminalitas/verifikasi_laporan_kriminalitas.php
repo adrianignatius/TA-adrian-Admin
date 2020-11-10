@@ -31,7 +31,6 @@
                                     <th>Jenis Kejadian</th>
                                     <th>Tanggal Laporan</th>
                                     <th>Waktu Laporan</th>
-                                    <th>Alamat Laporan</th>
                                     <th>Kecamatan</th>
                                     <th>Action</th>
                                 </tr>
@@ -43,7 +42,6 @@
                                     <td><?php echo $laporan['jenis_kejadian']; ?></td>
                                     <td><?php echo $laporan['tanggal_laporan']; ?></td>
                                     <td><?php echo $laporan['waktu_laporan']; ?></td>
-                                    <td><?php echo $laporan['alamat_laporan']; ?></td>
                                     <td><?php echo $laporan['kecamatan']; ?></td>
                                     <td class="text-nowrap">
                                     <a href="<?php echo base_url('admin/laporan_kriminalitas/detail/'.$laporan['id_laporan']) ?>"><button type="button" class="btn btn-info btn-circle btn-s" data-toggle="tooltip" data-original-title="Show Detail"><i class="icon-magnifier"></i></button></a>
